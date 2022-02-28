@@ -11,7 +11,7 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); /*Initialize the LCD and
 //Both pins are PWM so you can analogWrite to them and have them output a variable value
 
 
-void setup() {//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+void setup() {
   // put your setup code here, to run once:
   lcd.begin(16, 2); //Tell the LCD that it is a 16x2 LCD
   pinMode(contra, OUTPUT); //set pin 9 to OUTPUT
@@ -20,34 +20,33 @@ void setup() {//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   digitalWrite(contra, LOW); /*outputs no power to the contrast pin.
                             this lets you see the words*/
   analogWrite(bri, 255); //Outputs full power to the screen brightness LED
-}//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}
 
-void loop() {//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // put your main code here, to run repeatedly:
-  lcd.print(" GO UKRAINE!!"); //Output " Hello, World!!" on the first line of the LCD
-  lcd.setCursor(0, 1); /*Set the (invisible) cursor on the first place second row of the LCD.
-                        Cursor values are 0-indexed, 0 would the be the first place.
-                        The cursor coordinates are X,Y coordinates.*/
-  lcd.print("BEAT RUSSIA");
-  delay(1000); //Wait a second
-  for (int l = 0; l < 16; l++) { //For loop. Repeating 16 times
-    lcd.scrollDisplayRight(); //Scroll whole screen to the right once
-    delay(90); //Slight delay for animation
+void loop() {
+  //Put desired message here, to run repeatedly:
+  lcd.print(" GO UKRAINE!!"); //Output " GO UKRAINE!!" on the first line of the LCD
+  lcd.setCursor(0, 1); 
+  
+  lcd.print(" BEAT RUSSIA!!"); //Output " BEAT RUSSIA!!" on the second line of the LCD
+  delay(1000); //Wait 1 second
+  for (int l = 0; l < 16; l++) { //Repeat 16 times
+    lcd.scrollDisplayRight(); //Scroll whole screen to the right one time
+    delay(90); //Slight delay for animation (90 milliseconds)
   }
-  delay(1000);
+  delay(1000); //Wait 1 second
   for (int l = 0; l < 16; l++)
     lcd.scrollDisplayLeft();
-  for (int l = 51; l > -1; l--) { //Repeating 51 times
+  for (int l = 51; l > -1; l--) { //Repeat 51 times
     analogWrite(bri, l * 5);
     delay(35);
   }
   delay(1000);
   digitalWrite(bri, HIGH);
-  for (int l = 0; l < 51; l++) { //Repeating 51 times
+  for (int l = 0; l < 51; l++) { //Repeat 51 times
     analogWrite(contra, l * 5);
     delay(35);
   }
   delay(1000);
   digitalWrite(contra,LOW);
   lcd.setCursor(0, 0);
-}//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}
