@@ -1,3 +1,9 @@
+
+//Programers: Vance Clark, Kyle VanLandegent
+//Date: 3/1/2022
+//Materials, 1 Arduino Uno, 1 Breadboard, 220 ohm Resistor, 13 Wires, Display screen, USB cable
+//Credit: MicroBob
+
 #include <LiquidCrystal.h> //Import the LCD library
 //Include^
 //Init
