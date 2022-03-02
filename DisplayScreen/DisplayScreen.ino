@@ -33,7 +33,7 @@ void loop() {
   lcd.print(" ELON MUSK "); //Output " GO UKRAINE!!" on the first line of the LCD
   lcd.setCursor(0, 1); 
   
-  lcd.print(" FOR PRESIDENT"); //Output " BEAT RUSSIA!!" on the second line of the LCD
+  lcd.print(" FOR PRESIDENT"); //Output " BEAT RUSSIA!!" on the second line of the LCD-------------
   delay(1000); //Wait 1 second
   for (int l = 0; l < 16; l++) { //Repeat 16 times
     lcd.scrollDisplayRight(); //Scroll whole screen to the right one time
