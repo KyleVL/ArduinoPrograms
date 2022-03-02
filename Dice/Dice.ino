@@ -12,6 +12,11 @@
  
  This example code is in the public domain.
 
+ //Programers: Vance Clark, Kyle VanLandegent
+ //Date: 3/1/2022
+ //Materials, 1 Arduino Uno, 1 Breadboard, 220 ohm Resistor, 13 Wires, Display screen, USB cable
+ //Credit: EvdS
+
  */
 
 // set to 1 if we're debugging
